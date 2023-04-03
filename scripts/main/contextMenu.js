@@ -46,14 +46,14 @@ contextMenu.add = function (e) {
 		}
 		if (albumID.length === 24 || albumID === SmartAlbumID.UNSORTED) {
 			if (albumID !== SmartAlbumID.UNSORTED) {
-				let button_visibility_album = $("#button_visibility_album");
-				if (button_visibility_album && button_visibility_album.css("display") === "none") {
-					items.unshift({
-						title: build.iconic("eye") + lychee.locale["VISIBILITY_ALBUM"],
-						visible: lychee.enable_button_visibility,
-						fn: () => album.setProtectionPolicy(albumID),
-					});
-				}
+				// let button_visibility_album = $("#button_visibility_album");
+				// if (button_visibility_album && button_visibility_album.css("display") === "none") {
+				// 	items.unshift({
+				// 		title: build.iconic("eye") + lychee.locale["VISIBILITY_ALBUM"],
+				// 		visible: lychee.enable_button_visibility,
+				// 		fn: () => album.setProtectionPolicy(albumID),
+				// 	});
+				// }
 			}
 			let button_trash_album = $("#button_trash_album");
 			if (button_trash_album && button_trash_album.css("display") === "none") {
@@ -74,14 +74,14 @@ contextMenu.add = function (e) {
 						});
 					}
 				}
-				let button_nsfw_album = $("#button_nsfw_album");
-				if (button_nsfw_album && button_nsfw_album.css("display") === "none") {
-					items.unshift({
-						title: build.iconic("warning") + lychee.locale["ALBUM_MARK_NSFW"],
-						visible: true,
-						fn: () => album.toggleNSFW(),
-					});
-				}
+				// let button_nsfw_album = $("#button_nsfw_album");
+				// if (button_nsfw_album && button_nsfw_album.css("display") === "none") {
+				// 	items.unshift({
+				// 		title: build.iconic("warning") + lychee.locale["ALBUM_MARK_NSFW"],
+				// 		visible: true,
+				// 		fn: () => album.toggleNSFW(),
+				// 	});
+				// }
 			}
 			if (!album.isSmartID(albumID) && lychee.map_display) {
 				// display track add button if it's a regular album
@@ -516,14 +516,14 @@ contextMenu.photoMore = function (photoID, e) {
 	];
 	if (album.isUploadable()) {
 		// prepend further buttons if menu bar is reduced on small screens
-		const button_visibility = $("#button_visibility");
-		if (button_visibility && button_visibility.css("display") === "none") {
-			items.unshift({
-				title: build.iconic("eye") + lychee.locale["VISIBILITY_PHOTO"],
-				visible: lychee.enable_button_visibility,
-				fn: () => photo.setProtectionPolicy(photo.getID()),
-			});
-		}
+		// const button_visibility = $("#button_visibility");
+		// if (button_visibility && button_visibility.css("display") === "none") {
+		// 	items.unshift({
+		// 		title: build.iconic("eye") + lychee.locale["VISIBILITY_PHOTO"],
+		// 		visible: lychee.enable_button_visibility,
+		// 		fn: () => photo.setProtectionPolicy(photo.getID()),
+		// 	});
+		// }
 		const button_trash = $("#button_trash");
 		if (button_trash && button_trash.css("display") === "none") {
 			items.unshift({
