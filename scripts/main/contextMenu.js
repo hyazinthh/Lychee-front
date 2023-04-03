@@ -23,7 +23,7 @@ contextMenu.add = function (e) {
 	];
 
 	if (visible.albums()) {
-		items.push({ title: build.iconic("tags") + lychee.locale["NEW_TAG_ALBUM"], fn: () => album.addByTags() });
+		// items.push({ title: build.iconic("tags") + lychee.locale["NEW_TAG_ALBUM"], fn: () => album.addByTags() });
 	} else if (album.isSmartID(album.getID()) || album.isSearchID(album.getID())) {
 		// remove Import and New album if smart album or search results
 		items.splice(1);
