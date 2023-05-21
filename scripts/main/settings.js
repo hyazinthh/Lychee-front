@@ -301,6 +301,18 @@ settings.changeNSFWVisible = function (params) {
 	});
 };
 
+/**
+ * @param {SettingsFormData} params
+ * @returns {void}
+ */
+settings.changeSmartAlbumVisibility = function (params) {
+	api.post("Settings::setSmartAlbumVisibility", params, function () {
+		loadingBar.show("success", lychee.locale["SUCCESS"]);
+		const albumId = params.albumID;
+		lychee.smart_album_visibilty[albumId] = params.is_public;
+	});
+};
+
 //TODO : later
 // lychee.nsfw_blur = (data.config.nsfw_blur && data.config.nsfw_blur === '1') || false;
 // lychee.nsfw_warning = (data.config.nsfw_warning && data.config.nsfw_warning === '1') || false;
@@ -529,7 +541,8 @@ settings.openTokenDialog = function () {
 		disableTokenButton.title = lychee.locale["DISABLE_TOKEN_TOOLTIP"];
 		tokenInputElement = formElements.token;
 		tokenInputElement.placeholder = lychee.locale["TOKEN_WAIT"];
-		tokenInputElement.labels[0].textContent = "Token";
+		// console.log(tokenInputElement)
+		tokenInputElement.labels.textContent = "Token";
 		tokenInputElement.blur();
 
 		updateTokenDialog();
